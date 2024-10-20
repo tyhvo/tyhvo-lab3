@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let seconds = now.getSeconds();
 
         // Determine AM or PM
-        let ampm = hours >= 12 ? 'PM' : 'AM';
+        if (hours >= 12) {
+            ampm = 'PM';
+        } else {
+            ampm = 'AM';
+        }
 
         // Convert to 12-hour format
         hours = hours % 12 || 12;
